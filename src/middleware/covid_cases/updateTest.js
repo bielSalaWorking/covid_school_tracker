@@ -3,8 +3,7 @@ const Student = require('../../models/student/student');
 
 const updateTest = () => {
     return async (req,res,next) => {
-        const {classroom} = req.query;     
-         
+        const {classroom} = req.query;      
         const {student_id,status} = req.body
         try {
             switch(status) {
@@ -62,7 +61,6 @@ const testIsPositive = async (classroom, student_id, next) => {
  
     } catch (err) {
         res.status(422).json(err.message)
-
     }
 } 
 module.exports = updateTest;

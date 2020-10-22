@@ -8,9 +8,11 @@ const updateClassroom = () => {
                 id,
                 {isInQuarantine : true}
             );
-            return updateClassroom ? next() : res.status(422).json('Cannot update the classroom');
+            return updateClassroom 
+            ? next() 
+            : res.status(422).json('Cannot update the classroom');
         } catch (err) {
-            res.json(err)
+            res.status(422).json(err.message)
         }
     }
 }

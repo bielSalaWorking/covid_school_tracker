@@ -4,7 +4,6 @@ const updateStudents = () => {
     return async (req,res,next) => {
         const {name} = req.query;
         try {
-           
             const students = await Student.updateMany(
                 {classroom : name},
                 {isInQuarantine: true}
@@ -12,7 +11,7 @@ const updateStudents = () => {
             
             return students ? next() : res.status(422).json('Cannot update the students')
         } catch (err) {
-            res.json(err.message)   
+            res.status(422).json(err.message)   
         }
     }
 };

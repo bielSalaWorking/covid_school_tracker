@@ -11,7 +11,8 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/student', require('./src/routes/students/students'));
 app.use('/api/classroom', require('./src/routes/classroom/classroom'));
-app.use('/api/covidTest', require('./src/routes/covid_test/covid_test'));
+app.use('/api/covidTest', require('./src/routes/covidTest/covidTest'));
+app.use('/api/covidPositive', require('./src/routes/positiveCase/positiveCase'))
 
 app.listen(PORT, () => {
     console.log('running');

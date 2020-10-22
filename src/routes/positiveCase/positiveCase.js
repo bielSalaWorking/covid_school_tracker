@@ -1,10 +1,14 @@
 const {Router} = require('express');
 const router = Router();
 
-const addFormatedDates = require('../../middleware/covidPositives/covidPositives');
-const covidPositivesController = require('../../controllers/positive_case/positive_case');
+const {addTestInfo, addFormatedDates} = require('../../middleware/positiveCase/positiveCase');
+const positiveCaseController = require('../../controllers/positiveCase/positiveCase');
+
 router.post(
     '/createOne',
+    addTestInfo(),
     addFormatedDates(),
-    covidPositivesController.createOne
+    positiveCaseController.createOne
 );
+
+module.exports = router

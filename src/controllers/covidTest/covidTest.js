@@ -1,4 +1,4 @@
-const CovidTest = require('../../models/covid_test/covid_test');
+const {CovidTest} = require('../../models/covidTest/covidTest');
 
 exports.createOne = async (req, res) => {
     const covidTestData = req.body;

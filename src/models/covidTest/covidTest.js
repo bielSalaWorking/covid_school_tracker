@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const covid_test = mongoose.Schema({
+const covidTestSchema = mongoose.Schema({
     student_id: {
         type: String,
     },
@@ -18,4 +18,6 @@ const covid_test = mongoose.Schema({
         default: Date.now()
     }, 
 });
-module.exports = mongoose.model('CovidTest',covid_test);
+
+const CovidTest = mongoose.model('CovidTest',covidTestSchema);
+module.exports = {covidTestSchema, CovidTest};

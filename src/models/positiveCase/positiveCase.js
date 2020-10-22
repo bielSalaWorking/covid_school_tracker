@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
-const covid_case = require('../covid_case/covid_case');
+const covid_case = require('../../models/covidTest/covidTest');
 
-const covid_positive = mongoose.Schema({
+const positiveCase = mongoose.Schema({
     student_id: {
         type: String,
     },
     test_info: {
         type: covid_case,
-        required: true
+        //required: true
     },
     diagnosis_day: {
         type: Date,
@@ -16,4 +16,4 @@ const covid_positive = mongoose.Schema({
         type: Date,
     }, 
 });
-module.exports = mongoose.model('covid_positive',Covid_positive);
+module.exports = mongoose.model('PositiveCase',positiveCase);

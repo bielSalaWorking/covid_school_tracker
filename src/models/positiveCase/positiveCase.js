@@ -6,8 +6,10 @@ const positiveCase = mongoose.Schema({
         type: String,
     },
     test_info: {
-        type: covid_case,
-        //required: true
+        test_id: String,
+        test_type: String,
+        status: String,
+        test_day: Date,
     },
     diagnosis_day: {
         type: Date,
@@ -16,4 +18,6 @@ const positiveCase = mongoose.Schema({
         type: Date,
     }, 
 });
-module.exports = mongoose.model('PositiveCase',positiveCase);
+module.exports = mongoose.model('PositiveCase',positiveCase); 
+
+//A partir d'un test que es positiu crearem el nou document de positiveCase

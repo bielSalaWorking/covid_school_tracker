@@ -17,3 +17,9 @@ app.use('/api/covidPositive', require('./src/routes/positiveCase/positiveCase'))
 app.listen(PORT, () => {
     console.log('running');
 })
+
+//Need to work on the errors handlers
+//Code optimization
+// testing
+//more features
+//cache

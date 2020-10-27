@@ -14,13 +14,8 @@ const addFormatedDates = () => {
         next();
     }
 }
-const addTestInfo = () => {
-    return async(req,res,next) => {
-        
-        const test_info = await CovidTest.findOne({"student_id" : req.body.student_id});
-        if(test_info) req.body.test_info = test_info;
-        next();
-    }
-}
 
-module.exports = {addFormatedDates, addTestInfo};
+
+module.exports = addFormatedDates;
+
+     

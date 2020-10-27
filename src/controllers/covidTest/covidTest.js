@@ -11,7 +11,6 @@ exports.createOne = async (req, res) => {
         res.status(422).json(err.message);
     }
 }
-
 exports.findOneById = async (req,res) => {
     const {id} = req.query;
     try{
@@ -24,7 +23,6 @@ exports.findOneById = async (req,res) => {
         res.status(422).json(err.message)
     }
 }
-
 exports.updateOne = async (req,res) => {
     // const errors = validationResult(req);
     // if(!errors.isEmpty()){
@@ -41,6 +39,7 @@ exports.updateOne = async (req,res) => {
            {returnOriginal: false},
         );
         if(covidTest) return res.status(201).json(covidTestData);
+       
         res.status().json('Cannot update CovidTest');
     }catch(err){
         res.status(422).json(err.message);
@@ -78,7 +77,7 @@ exports.deleteOne = async (req,res) => {
         --> due_day need to be calculated
         --> test_info = covid_test
 
-    -> update the classroom.isInQuarantine = true.
+    -> update the classroo m.isInQuarantine = true.
     -> Update all the students in that classroom to students.isInQuarantine = ture
     -> Send emails to fathers
     
